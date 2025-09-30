@@ -59,10 +59,10 @@ This document provides a summary of key information about The Bloom Foundation, 
 
 #### **Branding Colors**
 
--   `brand-blue`: `#1E3A8A`
--   `brand-teal`: `#0D9488`
--   `brand-light`: `#F0F9FF`
--   `brand-accent`: `#F59E0B`
+-   `brand-green`: `#2d432d`
+-   `brand-brown`: `#775122`
+-   `brand-light`: `#F7FAFC`
+-   `brand-orange`: `#ff7900`
 
 #### **Images Used**
 
