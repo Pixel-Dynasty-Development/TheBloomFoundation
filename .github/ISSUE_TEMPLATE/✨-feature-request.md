@@ -4,6 +4,7 @@ about: Suggest an idea or new functionality.
 title: "[FEATURE] - "
 labels: enhancement
 assignees: ''
+type: Feature
 
 ---
 

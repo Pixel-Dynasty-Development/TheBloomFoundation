@@ -4,6 +4,7 @@ about: A general task or to-do item.
 title: "[TASK] - "
 labels: task
 assignees: ''
+type: Task
 
 ---
 
