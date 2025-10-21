@@ -1,0 +1,26 @@
+{
+	"name": "thebloomfoundation",
+	"version": "1.0.0",
+	"description": "This document provides a summary of key information about The Bloom Foundation, intended for use during the website development process.",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite build && vite preview",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pixel-Dynasty-Development/TheBloomFoundation.git"
+	},
+	"keywords": [],
+	"author": "Pixel Dynasty Development",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Pixel-Dynasty-Development/TheBloomFoundation/issues"
+	},
+	"homepage": "https://github.com/Pixel-Dynasty-Development/TheBloomFoundation#readme",
+	"devDependencies": {
+		"vite": "^7.1.11",
+		"wrangler": "^4.44.0"
+	}
+}
