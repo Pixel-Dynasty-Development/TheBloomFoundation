@@ -2,11 +2,10 @@
 	"name": "thebloomfoundation",
 	"version": "1.0.0",
 	"description": "This document provides a summary of key information about The Bloom Foundation, intended for use during the website development process.",
-	"main": "index.html",
 	"scripts": {
-		"dev": "wrangler pages dev -- vite",
+		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite build && vite preview",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {

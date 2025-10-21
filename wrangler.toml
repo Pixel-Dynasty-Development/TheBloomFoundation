@@ -1,9 +1,15 @@
 # Use the name from your package.json
+
 name = "thebloomfoundation"
+
 compatibility_date = "2023-10-30" # Use a recent date
 
 [pages_build]
+
 # The command to build your Vite frontend
+
 build_command = "npm run build"
+
 # The directory where Vite outputs the final files
+
 build_output_dir = "dist"
