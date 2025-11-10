@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+
+
+
+Sitemap: https://www.thebloomfoundation.org/sitemap.xml
