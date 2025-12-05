@@ -1,73 +1,85 @@
-<div class="bg-brand-light dark:bg-gray-700 p-8 rounded-lg shadow-lg">
-  <form id="contact-form" method="post" class="space-y-6">
-    <div id="form-fields" class="space-y-6">
-      <input
-        type="hidden"
-        name="access_key"
-        value="6716f822-12e7-4b87-965f-d35756484004" />
-      <input
-        type="hidden"
-        name="subject"
-        value="New Submission for The Bloom Foundation!" />
-      <input type="checkbox" name="botcheck" id="" style="display: none" />
+<div
+	class="bg-brand-light dark:bg-gray-700 p-8 rounded-lg shadow-lg border-brand-brown dark:border-brand-orange border-2 relative overflow-hidden">
+	<form
+		id="contact-form"
+		method="post"
+		class="space-y-6">
+		<div
+			id="form-fields"
+			class="space-y-6">
+			<input
+				type="hidden"
+				name="access_key"
+				value="6716f822-12e7-4b87-965f-d35756484004" />
+			<input
+				type="hidden"
+				name="subject"
+				value="New Submission for The Bloom Foundation!" />
+			<input
+				type="checkbox"
+				name="botcheck"
+				id=""
+				style="display: none" />
 
-      <div class="mb-5">
-        <label
-          for="name"
-          class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Full Name</label
-        >
-        <input
-          type="text"
-          id="name"
-          name="name"
-          class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
-          placeholder="John Doe" />
-      </div>
-      <div class="mb-5">
-        <label
-          for="email"
-          class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Email Address</label
-        >
-        <input
-          type="email"
-          id="email"
-          name="email"
-          class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
-          placeholder="you@example.com" />
-      </div>
-      <div class="mb-5">
-        <label
-          for="message"
-          class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Your Message</label
-        >
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
-          placeholder="I'm interested in learning more about..."></textarea>
-      </div>
-      <button
-        type="submit"
-        class="w-full bg-brand-brown dark:bg-brand-orange text-white font-bold py-3 px-4 rounded-lg hover:bg-brown-700 dark:hover:bg-yellow-600 transition-colors shadow-md">
-        Send Message
-      </button>
-    </div>
-    <div class="text-center">
-      <div id="result" class="mt-4 text-lg font-medium text-green-600"></div>
-    </div>
-  </form>
-  <div
-    id="success-message"
-    class="absolute inset-0 items-center justify-center bg-white text-green-600 text-2xl font-semibold hidden transition-opacity duration-500">
-    Email Sent Successfully!
-  </div>
-  <div
-    id="spam-message"
-    class="absolute inset-0 items-center justify-center bg-white text-red-600 text-2xl font-semibold hidden transition-opacity duration-500 text-center p-4">
-    Your email was detected as spam. Please try again!
-  </div>
+			<div class="mb-5">
+				<label
+					for="name"
+					class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+					>Full Name</label
+				>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
+					placeholder="John Doe" />
+			</div>
+			<div class="mb-5">
+				<label
+					for="email"
+					class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+					>Email Address</label
+				>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
+					placeholder="you@example.com" />
+			</div>
+			<div class="mb-5">
+				<label
+					for="message"
+					class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+					>Your Message</label
+				>
+				<textarea
+					id="message"
+					name="message"
+					rows="4"
+					class="block w-full p-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-brand-green dark:focus:border-brand-brown focus:ring focus:ring-brand-green dark:focus:ring-brand-brown focus:ring-opacity-50"
+					placeholder="I'm interested in learning more about..."></textarea>
+			</div>
+			<button
+				type="submit"
+				class="w-full bg-brand-brown dark:bg-brand-orange text-white font-bold py-3 px-4 rounded-lg hover:bg-brown-700 dark:hover:bg-yellow-600 transition-colors shadow-md">
+				Send Message
+			</button>
+		</div>
+		<div class="text-center">
+			<div
+				id="result"
+				class="mt-4 text-lg font-medium text-green-600"></div>
+		</div>
+	</form>
+	<div
+		id="success-message"
+		class="absolute inset-0 items-center justify-center bg-white text-green-600 text-2xl font-semibold hidden transition-opacity duration-500">
+		Email Sent Successfully!
+	</div>
+	<div
+		id="spam-message"
+		class="absolute inset-0 items-center justify-center bg-white text-red-600 text-2xl font-semibold hidden transition-opacity duration-500 text-center p-4">
+		Your email was detected as spam. Please try again!
+	</div>
 </div>
