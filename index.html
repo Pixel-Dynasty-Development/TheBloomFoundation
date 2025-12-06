@@ -34,26 +34,6 @@
     />
     <!-- Lucide Icons CDN -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
-
-    <!-- Custom Stylesheet -->
-    <style>
-      body {
-        scroll-behavior: smooth;
-      }
-      /* Dark mode icon styling */
-      .dark #theme-toggle .moon-icon {
-        display: none;
-      }
-      .dark #theme-toggle .sun-icon {
-        display: block;
-      }
-      html:not(.dark) #theme-toggle .moon-icon {
-        display: block;
-      }
-      html:not(.dark) #theme-toggle .sun-icon {
-        display: none;
-      }
-    </style>
   </head>
 
   <body
@@ -195,11 +175,36 @@
           class="hover:text-brand-green dark:hover:text-brand-brown block py-2 text-gray-600 dark:text-gray-200"
           >About Us</a
         >
-        <a
-          href="#services"
-          class="hover:text-brand-green dark:hover:text-brand-brown block py-2 text-gray-600 dark:text-gray-200"
-          >Our Services</a
-        >
+        <div class="group relative">
+          <button
+            class="hover:text-brand-green dark:hover:text-brand-brown flex items-center text-gray-600 transition-colors focus:outline-none dark:text-gray-200"
+          >
+            Resources
+            <svg
+              class="ml-1 h-4 w-4 transform transition-transform group-hover:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            class="orgin-top-left absolute left-0 z-25 hidden w-40 rounded-md bg-white shadow-lg transition-all duration-500 group-hover:block dark:bg-gray-700"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600"
+              >Careers</a
+            >
+          </div>
+        </div>
         <a
           href="#contact-us"
           class="hover:text-brand-green dark:hover:text-brand-brown block py-2 text-gray-600 dark:text-gray-200"
