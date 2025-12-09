@@ -1,88 +1,134 @@
 // UPDATED: Changed the glob import options to the new syntax
 const componentModules = import.meta.glob("/src/components/*.html", {
-	query: "?raw",
-	import: "default",
-	eager: true,
+  query: "?raw",
+  import: "default",
+  eager: true,
 });
 
 export function loadComponents() {
-	const componentContainers = document.querySelectorAll("[data-component]");
+  const componentContainers = document.querySelectorAll("[data-component]");
 
-	componentContainers.forEach((container) => {
-		const componentName = container.dataset.component;
-		const componentPath = `/src/components/${componentName}.html`;
+  componentContainers.forEach((container) => {
+    const componentName = container.dataset.component;
+    const componentPath = `/src/components/${componentName}.html`;
 
-		// Look up the component HTML from the object instead of fetching
-		if (componentModules[componentPath]) {
-			container.innerHTML = componentModules[componentPath];
-			// Initialize specific component functionalities
-			if (componentName === "contact-form") {
-				initializeContactForm(container);
-			}
-		} else {
-			console.error(
-				`Error loading ${componentName} component: Not found in build.`
-			);
-		}
-	});
+    // Look up the component HTML from the object instead of fetching
+    if (componentModules[componentPath]) {
+      container.innerHTML = componentModules[componentPath];
+
+      // Initialize specific component functionalities
+      if (componentName === "contact-form") {
+        initializeContactForm(container);
+      } else if (componentName === "nav") {
+        initializeNavComponent(container);
+      }
+    } else {
+      console.error(
+        `Error loading ${componentName} component: Not found in build.`,
+      );
+    }
+  });
 }
 
+// Initialize nav component functionalities
+function initializeNavComponent(container) {
+  const mobileMenuButton = container.querySelector("#mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Dark mode toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const htmlElement = document.documentElement;
+
+  // Function to set the theme
+  const setTheme = (theme) => {
+    if (theme === "dark") {
+      htmlElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      htmlElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
+  // Check for saved theme preference or system preference
+  const currentTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  setTheme(currentTheme);
+
+  themeToggle.addEventListener("click", () => {
+    if (htmlElement.classList.contains("dark")) {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  });
+}
+
+// Initialize contact form functionalities
 function initializeContactForm(container) {
-	const form = container.querySelector("#contact-form");
-	const formFields = container.querySelector("#form-fields");
-	const result = container.querySelector("#result");
-	const successMessage = container.querySelector("#success-message");
-	const spamMessage = container.querySelector("#spam-message");
+  const form = container.querySelector("#contact-form");
+  const formFields = container.querySelector("#form-fields");
+  const result = container.querySelector("#result");
+  const successMessage = container.querySelector("#success-message");
+  const spamMessage = container.querySelector("#spam-message");
 
-	if (form) {
-		form.addEventListener("submit", function (e) {
-			e.preventDefault();
-			const formData = new FormData(form);
-			const object = Object.fromEntries(formData);
-			const json = JSON.stringify(object);
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
 
-			formFields.style.display = "none";
-			result.innerHTML = "Please wait...";
-			successMessage.classList.add("hidden");
-			spamMessage.classList.add("hidden");
+      formFields.style.display = "none";
+      result.innerHTML = "Please wait...";
+      successMessage.classList.add("hidden");
+      spamMessage.classList.add("hidden");
 
-			fetch("https://api.web3forms.com/submit", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					Accept: "application/json",
-				},
-				body: json,
-			})
-				.then(async (response) => {
-					let jsonResponse = await response.json();
-					if (response.status === 200) {
-						result.innerHTML = "";
-						successMessage.classList.remove("hidden");
-						setTimeout(() => {
-							successMessage.classList.add("hidden");
-							formFields.style.display = "block";
-							form.reset();
-						}, 5000);
-					} else {
-						console.log(response);
-						result.innerHTML = jsonResponse.message + ". Please try again.";
-						formFields.style.display = "block";
-						if (object.botcheck) {
-							spamMessage.classList.remove("hidden");
-							setTimeout(() => {
-								spamMessage.classList.add("hidden");
-								formFields.style.display = "block";
-								form.reset();
-							}, 5000);
-						}
-					}
-				})
-				.catch((error) => {
-					console.log(error);
-					result.innerHTML = "Something went wrong!";
-					formFields.style.display = "block";
-				});
-		});
-	}
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      })
+        .then(async (response) => {
+          let jsonResponse = await response.json();
+          if (response.status === 200) {
+            result.innerHTML = "";
+            successMessage.classList.remove("hidden");
+            setTimeout(() => {
+              successMessage.classList.add("hidden");
+              formFields.style.display = "block";
+              form.reset();
+            }, 5000);
+          } else {
+            console.log(response);
+            result.innerHTML = jsonResponse.message + ". Please try again.";
+            formFields.style.display = "block";
+            if (object.botcheck) {
+              spamMessage.classList.remove("hidden");
+              setTimeout(() => {
+                spamMessage.classList.add("hidden");
+                formFields.style.display = "block";
+                form.reset();
+              }, 5000);
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.innerHTML = "Something went wrong!";
+          formFields.style.display = "block";
+        });
+    });
+  }
 }

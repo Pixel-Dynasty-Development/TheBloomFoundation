@@ -1,9 +1,28 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-green: #2d432d;
   --color-brand-brown: #775122;
   --color-brand-light: #f7fafc;
   --color-brand-orange: #ff7900;
   --font-sans: "Inter", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+/* Dark mode icon styling */
+.dark #theme-toggle .moon-icon {
+  display: none;
+}
+.dark #theme-toggle .sun-icon {
+  display: block;
+}
+html:not(.dark) #theme-toggle .moon-icon {
+  display: block;
+}
+html:not(.dark) #theme-toggle .sun-icon {
+  display: none;
 }
