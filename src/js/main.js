@@ -39,7 +39,7 @@ const boardMembers = [
     name: "Nicolas Bennett",
     title: "Treasurer",
     image: "https://placehold.co/400x400/png?text=Nicolas",
-    bio: "<p>Sarah is a local educator with a deep understanding of the challenges our youth face. She documents our journey and keeps our mission on track.</p><p>She believes that education and basic needs go hand in hand.</p>",
+    bio: "Roots & Background: I am Nicolas Bennett and I grew up in Dandridge 🏡 in the home my parents still live in now. Growing up in the area and attending Jefferson County High School rooted my deep commitment to this community.<br><br>Education: My educational journey continued at Bryan College 🎓, where I earned three distinct degrees:<br>Associate's in Business<br>Bachelor's in Business Management<br>Master's in Sports Management<br><br>This diverse background has equipped me with a strong blend of business acumen and a specialized understanding of community engagement through the lens of sports ⚾.<br><br>My Mission My primary focus now is to leverage this experience and my dedication to the place I call home. I am actively helping to launch a foundation with the singular goal of giving back.",
   },
   {
     id: 5,
