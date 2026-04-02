@@ -33,7 +33,7 @@
 	"homepage": "https://thebloomfoundationtn.org/",
 	"devDependencies": {
 		"eslint": "^9.39.1",
-		"glob": "^11.0.3",
+		"glob": "^11.1.0",
 		"prettier": "^3.7.4",
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"tailwindcss": "^4.1.17",
