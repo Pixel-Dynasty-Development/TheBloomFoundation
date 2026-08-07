@@ -4,8 +4,6 @@ This document provides a summary of key information about The Bloom Foundation, 
 
 ## Company Information
 
-#TEST
-
 ### **Company Overview**
 
 - **Company Name:** The Bloom Foundation
